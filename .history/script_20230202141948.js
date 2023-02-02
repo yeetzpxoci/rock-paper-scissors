@@ -64,7 +64,7 @@ function checkWinner(playerScore, computerScore) {
         let btn = document.createElement("button");
         btn.innerHTML = "Click Me";
         document.body.appendChild(btn);
-
+        
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
         document.getElementById("Rock").disabled = true;
@@ -72,8 +72,7 @@ function checkWinner(playerScore, computerScore) {
         document.getElementById("Scissors").disabled = true; 
         
         let btn = document.createElement("button");
-        btn.innerHTML = "Play again";
-        btn.setAttribute("id", "again");
+        btn.innerHTML = "Click Me";
         document.body.appendChild(btn);
     }
 }

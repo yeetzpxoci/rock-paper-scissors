@@ -72,7 +72,7 @@ function checkWinner(playerScore, computerScore) {
         document.getElementById("Scissors").disabled = true; 
         
         let btn = document.createElement("button");
-        btn.innerHTML = "Play again";
+        btn.innerHTML = "Click Me";
         btn.setAttribute("id", "again");
         document.body.appendChild(btn);
     }

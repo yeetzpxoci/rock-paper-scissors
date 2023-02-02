@@ -60,48 +60,39 @@ function checkWinner(playerScore, computerScore) {
         document.getElementById("Rock").disabled = true; 
         document.getElementById("Paper").disabled = true; 
         document.getElementById("Scissors").disabled = true; 
-
-        let btn = document.createElement("button");
-        btn.innerHTML = "Click Me";
-        document.body.appendChild(btn);
-
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
         document.getElementById("Rock").disabled = true;
         document.getElementById("Paper").disabled = true;
         document.getElementById("Scissors").disabled = true; 
-        
-        let btn = document.createElement("button");
-        btn.innerHTML = "Play again";
-        btn.setAttribute("id", "again");
-        document.body.appendChild(btn);
     }
 }
 
-rock.addEventListener("click", function clickPlay() {
-    const result = playRound(this.id, getComputerChoice());
-    document.getElementById("computer-text").innerHTML = result;
-    var playerScore = document.getElementById("playerScore").innerHTML;
-    var computerScore = document.getElementById("computerScore").innerHTML; 
-    checkWinner(playerScore, computerScore);
-});
+function game() {
+    rock.addEventListener("click", function clickPlay() {
+        const result = playRound(this.id, getComputerChoice());
+        document.getElementById("computer-text").innerHTML = result;
+        var playerScore = document.getElementById("playerScore").innerHTML;
+        var computerScore = document.getElementById("computerScore").innerHTML; 
+        checkWinner(playerScore, computerScore);
+    });
 
-paper.addEventListener("click", function clickPlay() {
-    const result = playRound(this.id, getComputerChoice());
-    document.getElementById("computer-text").innerHTML = result;
-    var playerScore = document.getElementById("playerScore").innerHTML;
-    var computerScore = document.getElementById("computerScore").innerHTML; 
-    checkWinner(playerScore, computerScore);
-});
+    paper.addEventListener("click", function clickPlay() {
+        const result = playRound(this.id, getComputerChoice());
+        document.getElementById("computer-text").innerHTML = result;
+        var playerScore = document.getElementById("playerScore").innerHTML;
+        var computerScore = document.getElementById("computerScore").innerHTML; 
+        checkWinner(playerScore, computerScore);
+    });
 
-scissors.addEventListener("click", function clickPlay() {
-    const result = playRound(this.id, getComputerChoice());
-    document.getElementById("computer-text").innerHTML = result;
-    var playerScore = document.getElementById("playerScore").innerHTML;
-    var computerScore = document.getElementById("computerScore").innerHTML; 
-    checkWinner(playerScore, computerScore);
-});
-
+    scissors.addEventListener("click", function clickPlay() {
+        const result = playRound(this.id, getComputerChoice());
+        document.getElementById("computer-text").innerHTML = result;
+        var playerScore = document.getElementById("playerScore").innerHTML;
+        var computerScore = document.getElementById("computerScore").innerHTML; 
+        checkWinner(playerScore, computerScore);
+    });
+}
 
 game()
 
