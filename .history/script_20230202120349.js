@@ -53,8 +53,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     document.getElementById("Rock").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        playRound(this.id, getComputerChoice());
 
         if (document.getElementById("playerScore").innerHTML == 5) {
             document.getElementById("winner-text").innerHTML = "Congratz! You Win"
@@ -66,8 +65,7 @@ function game() {
     });
 
     document.getElementById("Paper").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        playRound(this.id, getComputerChoice());
 
         if (document.getElementById("playerScore").innerHTML == 5) {
             document.getElementById("winner-text").innerHTML = "Congratz! You Win"
@@ -79,8 +77,7 @@ function game() {
     });
 
     document.getElementById("Scissors").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        playRound(this.id, getComputerChoice());   
         
         if (document.getElementById("playerScore").innerHTML == 5) {
             document.getElementById("winner-text").innerHTML = "Congratz! You Win"

@@ -50,43 +50,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
 function game() {
     document.getElementById("Rock").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        playRound(this.id, getComputerChoice());
 
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-            return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
         }
     });
 
     document.getElementById("Paper").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        playRound(this.id, getComputerChoice());
 
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-            return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
         }
     });
 
     document.getElementById("Scissors").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
+        result = playRound(this.id, getComputerChoice());   
         
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-            return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
         }
     });

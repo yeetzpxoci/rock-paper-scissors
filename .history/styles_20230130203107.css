@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blueviolet;
+    gap: 24px;
+}
+
+button {
+    background-color: blueviolet;
+    font-size: 48px;
+    color: aqua;
+    border-color: aqua;
+    border-width: 8px;
+    border-style: ridge;
+    flex: 1 1 0;
+}

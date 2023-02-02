@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: blueviolet;
+    font-size: 48px;
+    color: aqua;
+    border-color: aqua;
+    border-width: 8px;
+    border-style: ridge;
+}

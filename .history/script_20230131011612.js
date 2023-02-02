@@ -9,6 +9,10 @@ function playRound(playerSelection, computerSelection) {
     var playerScore = document.getElementById("playerScore").innerHTML;
     var computerScore = document.getElementById("computerScore").innerHTML;
 
+    if (playerScore == 5 || computerScore == 5) {
+        alert("Game over!");
+    }
+
     if (p == computerSelection.toLowerCase()) {
         return "It's a draw!";
     }
@@ -50,45 +54,26 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
 function game() {
     document.getElementById("Rock").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
-
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-            return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
+        result = playRound(this.id, getComputerChoice());
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
         }
     });
 
     document.getElementById("Paper").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
-
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-            return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
+        result = playRound(this.id, getComputerChoice());
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
         }
     });
 
     document.getElementById("Scissors").addEventListener("click", function () {
-        const result = playRound(this.id, getComputerChoice());
-        document.getElementById("computer-text").innerHTML = result;
-        
-        if (document.getElementById("playerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
+        result = playRound(this.id, getComputerChoice());  
+        if (document.getElementById("playerScore").innerHTML == 5 || document.getElementById("computerScore").innerHTML == 5) {
             return;
-        } else if (document.getElementById("computerScore").innerHTML == 5) {
-            document.getElementById("winner-text").innerHTML = ":( You Lost"
-            return;
-        }
+        }  
     });
 }
 

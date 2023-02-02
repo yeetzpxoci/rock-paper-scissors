@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blueviolet;
+    font-family: Helvetica;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    font-size: 48px;
+    color: blueviolet;
+    width: 50%;
+}
+
+#score {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    align-items: center;
+}
+
+button {
+    background-color: blueviolet;
+    font-size: 48px;
+    color: aqua;
+    border-color: aqua;
+    border-width: 8px;
+    border-style: ridge;
+    flex: 1 1 0;
+}
