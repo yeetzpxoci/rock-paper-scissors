@@ -53,23 +53,13 @@ function playRound(playerSelection, computerSelection) {
 function checkWinner(playerScore, computerScore) {
     if (playerScore == 5) {
         document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-        document.getElementById("Rock").disabled = true; 
-        document.getElementById("Paper").disabled = true; 
-        document.getElementById("Scissors").disabled = true; 
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
-        document.getElementById("Rock").disabled = true;
-        document.getElementById("Paper").disabled = true;
-        document.getElementById("Scissors").disabled = true; 
     }
 }
 
 function game() {
-    const rock = document.getElementById("Rock");
-    const paper = document.getElementById("Paper")
-    const scissors = document.getElementById("Scissors");
-
-    rock.addEventListener("click", function clickPlay() {
+    document.getElementById("Rock").addEventListener("click", function clickPlay() {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
         var playerScore = document.getElementById("playerScore").innerHTML;
@@ -77,7 +67,7 @@ function game() {
         checkWinner(playerScore, computerScore);
     });
 
-    paper.addEventListener("click", function clickPlay() {
+    document.getElementById("Paper").addEventListener("click", function clickPlay() {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
         var playerScore = document.getElementById("playerScore").innerHTML;
@@ -85,7 +75,7 @@ function game() {
         checkWinner(playerScore, computerScore);
     });
 
-    scissors.addEventListener("click", function clickPlay() {
+    document.getElementById("Scissors").addEventListener("click", function clickPlay() {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
         var playerScore = document.getElementById("playerScore").innerHTML;

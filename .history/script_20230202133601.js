@@ -53,18 +53,20 @@ function playRound(playerSelection, computerSelection) {
 function checkWinner(playerScore, computerScore) {
     if (playerScore == 5) {
         document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-        document.getElementById("Rock").disabled = true; 
-        document.getElementById("Paper").disabled = true; 
-        document.getElementById("Scissors").disabled = true; 
+        return true;
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
-        document.getElementById("Rock").disabled = true;
-        document.getElementById("Paper").disabled = true;
-        document.getElementById("Scissors").disabled = true; 
+        return true;
     }
 }
 
 function game() {
+    function stop() {
+        rock.removeEventListener("click", clickPlay);
+        paper.removeEventListener("click", clickPlay);
+        scissors.removeEventListener("click", clickPlay);
+    }
+
     const rock = document.getElementById("Rock");
     const paper = document.getElementById("Paper")
     const scissors = document.getElementById("Scissors");
@@ -75,6 +77,7 @@ function game() {
         var playerScore = document.getElementById("playerScore").innerHTML;
         var computerScore = document.getElementById("computerScore").innerHTML; 
         checkWinner(playerScore, computerScore);
+        stop();
     });
 
     paper.addEventListener("click", function clickPlay() {
@@ -83,6 +86,7 @@ function game() {
         var playerScore = document.getElementById("playerScore").innerHTML;
         var computerScore = document.getElementById("computerScore").innerHTML; 
         checkWinner(playerScore, computerScore);
+        stop();
     });
 
     scissors.addEventListener("click", function clickPlay() {
@@ -91,6 +95,7 @@ function game() {
         var playerScore = document.getElementById("playerScore").innerHTML;
         var computerScore = document.getElementById("computerScore").innerHTML; 
         checkWinner(playerScore, computerScore);
+        stop();
     });
 }
 

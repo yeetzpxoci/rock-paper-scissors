@@ -50,47 +50,54 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function checkWinner(playerScore, computerScore) {
-    if (playerScore == 5) {
-        document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-        document.getElementById("Rock").disabled = true; 
-        document.getElementById("Paper").disabled = true; 
-        document.getElementById("Scissors").disabled = true; 
-    } else if (computerScore == 5) {
-        document.getElementById("winner-text").innerHTML = ":( You Lost"
-        document.getElementById("Rock").disabled = true;
-        document.getElementById("Paper").disabled = true;
-        document.getElementById("Scissors").disabled = true; 
-    }
+function stop_game() {
+    document.getElementById("Rock").removeEventListener("click");
+    document.getElementById("Paper").removeEventListener("click");
+    document.getElementById("Scissors").removeEventListener("click");
 }
 
 function game() {
     const rock = document.getElementById("Rock");
-    const paper = document.getElementById("Paper")
+    const paper = document.getElementById("Paper");
     const scissors = document.getElementById("Scissors");
 
-    rock.addEventListener("click", function clickPlay() {
+    rock.addEventListener("click", function () {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
-        var playerScore = document.getElementById("playerScore").innerHTML;
-        var computerScore = document.getElementById("computerScore").innerHTML; 
-        checkWinner(playerScore, computerScore);
+
+        if (document.getElementById("playerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
+            stop_game();
+        } else if (document.getElementById("computerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = ":( You Lost"
+            stop_game();
+        }
     });
 
-    paper.addEventListener("click", function clickPlay() {
+    paper.addEventListener("click", function () {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
-        var playerScore = document.getElementById("playerScore").innerHTML;
-        var computerScore = document.getElementById("computerScore").innerHTML; 
-        checkWinner(playerScore, computerScore);
+
+        if (document.getElementById("playerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
+            stop_game();
+        } else if (document.getElementById("computerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = ":( You Lost"
+            stop_game();
+        }
     });
 
-    scissors.addEventListener("click", function clickPlay() {
+    scissors.addEventListener("click", function () {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
-        var playerScore = document.getElementById("playerScore").innerHTML;
-        var computerScore = document.getElementById("computerScore").innerHTML; 
-        checkWinner(playerScore, computerScore);
+        
+        if (document.getElementById("playerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = "Congratz! You Win"
+            stop_game();
+        } else if (document.getElementById("computerScore").innerHTML == 5) {
+            document.getElementById("winner-text").innerHTML = ":( You Lost"
+            stop_game()
+        }
     });
 }
 

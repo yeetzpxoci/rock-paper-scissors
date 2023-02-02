@@ -53,14 +53,10 @@ function playRound(playerSelection, computerSelection) {
 function checkWinner(playerScore, computerScore) {
     if (playerScore == 5) {
         document.getElementById("winner-text").innerHTML = "Congratz! You Win"
-        document.getElementById("Rock").disabled = true; 
-        document.getElementById("Paper").disabled = true; 
-        document.getElementById("Scissors").disabled = true; 
+        return true;
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
-        document.getElementById("Rock").disabled = true;
-        document.getElementById("Paper").disabled = true;
-        document.getElementById("Scissors").disabled = true; 
+        return true;
     }
 }
 
@@ -85,7 +81,7 @@ function game() {
         checkWinner(playerScore, computerScore);
     });
 
-    scissors.addEventListener("click", function clickPlay() {
+    document.getElementById("Scissors").addEventListener("click", function clickPlay() {
         const result = playRound(this.id, getComputerChoice());
         document.getElementById("computer-text").innerHTML = result;
         var playerScore = document.getElementById("playerScore").innerHTML;
