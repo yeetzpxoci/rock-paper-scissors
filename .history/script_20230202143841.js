@@ -63,7 +63,6 @@ function checkWinner(playerScore, computerScore) {
 
         let btn = document.createElement("button");
         btn.innerHTML = "Play again";
-        btn.setAttribute("id", "again");
         document.body.appendChild(btn);
         document.getElementById("again").addEventListener("click", resetGame);
 
@@ -89,7 +88,6 @@ function resetGame() {
     document.getElementById("computer-text").innerHTML = "";
     document.getElementById("playerScore").innerHTML = 0;
     document.getElementById("computerScore").innerHTML = 0;
-    document.getElementById("again").remove();
 }
 
 rock.addEventListener("click", function clickPlay() {

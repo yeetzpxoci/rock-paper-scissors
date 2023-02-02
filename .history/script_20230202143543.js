@@ -62,10 +62,8 @@ function checkWinner(playerScore, computerScore) {
         scissors.disabled = true; 
 
         let btn = document.createElement("button");
-        btn.innerHTML = "Play again";
-        btn.setAttribute("id", "again");
+        btn.innerHTML = "Click Me";
         document.body.appendChild(btn);
-        document.getElementById("again").addEventListener("click", resetGame);
 
     } else if (computerScore == 5) {
         document.getElementById("winner-text").innerHTML = ":( You Lost"
@@ -77,7 +75,7 @@ function checkWinner(playerScore, computerScore) {
         btn.innerHTML = "Play again";
         btn.setAttribute("id", "again");
         document.body.appendChild(btn);
-        document.getElementById("again").addEventListener("click", resetGame);
+        document.getElementById("score").addEventListener("click", resetGame());
     }
 }
 
@@ -85,11 +83,9 @@ function resetGame() {
     rock.disabled = false;
     paper.disabled = false;
     scissors.disabled = false;
-    document.getElementById("winner-text").innerHTML = "";
-    document.getElementById("computer-text").innerHTML = "";
-    document.getElementById("playerScore").innerHTML = 0;
-    document.getElementById("computerScore").innerHTML = 0;
-    document.getElementById("again").remove();
+    document.getElementById("winner-text").innerHTML = ""
+    document.getElementById("playerScore").innerHTML;
+    document.getElementById("computerScore").innerHTML;
 }
 
 rock.addEventListener("click", function clickPlay() {
@@ -116,4 +112,6 @@ scissors.addEventListener("click", function clickPlay() {
     checkWinner(playerScore, computerScore);
 });
 
+
+game()
 
